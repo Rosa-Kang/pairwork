@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
-import Recipe from "../component/Recipe";
+import Form from "../component/Form";
 import NutFactor from "../component/NutFactor";
-import Calculation from "../component/Calculation";
+// import Calculation from "../component/Calculation";
 import Header from "../component/Header";
 import "../styles/App.css";
 
@@ -48,15 +48,15 @@ class App extends Component {
       });
     };
     return (
-      <div className="App">
+      <div className="app">
         <Header />
-        <form onSubmit={handler}>
-          <textarea name="query" />
-          <button>Caculate Callories</button>
-        </form>
-        <Calculation />
-        <Recipe />
-        <NutFactor food={this.state.food} />
+        <div className="app__left">
+          <div>
+            <Form />
+            {/* <Calculation /> */}
+          </div>
+          <NutFactor />
+        </div>
       </div>
     );
   }
