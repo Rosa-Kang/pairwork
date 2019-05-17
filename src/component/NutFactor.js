@@ -1,6 +1,8 @@
 import React from "react";
 
 export default function NutFactor(props) {
+  console.log(props.food)
+  if(props.food.length!== 0)
   return (
     <section class="performance-facts">
       <header class="performance-facts__header">
@@ -172,4 +174,6 @@ export default function NutFactor(props) {
       </p>
     </section>
   );
+  else
+  return <div></div>
 }
