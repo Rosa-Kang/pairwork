@@ -15,7 +15,7 @@ class App extends Component {
   render() {
     const handler = event => {
       const query = event.target.query.value;
-
+       event.target.query.value = "";
       let config = {
         headers: {
           "X-RapidAPI-Host": "nutritionix-api.p.rapidapi.com",
@@ -28,14 +28,23 @@ class App extends Component {
         this.setState({
           foods: response.data
         });
+        console.log(response.data)
+        
         const call = this.state.foods.hits.find(food => {
           return food.fields.item_name.toLowerCase() === query.toLowerCase();
         });
+        if (typeof call !== "undefined")
         this.setState({
           food: call
         });
+        else
+        this.setState({
+          food: this.state.foods.hits[0]
+        });
+
         console.log(call);
         console.log(this.state.food.fields.nf_calories);
+        console.log(query)
       });
     };
     return (
