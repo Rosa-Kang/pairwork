@@ -21,8 +21,10 @@ export default function NutFactor(props) {
         <tbody>
           <tr>
             <th colspan="2">
-              <b>Calories</b>
-              {/* {props.food.fields.nf_calories} */}
+
+              <b>Calories </b>
+              {props.food.fields.nf_calories}            
+
             </th>
             <td>Calories from Fat 130</td>
           </tr>
@@ -33,68 +35,68 @@ export default function NutFactor(props) {
           </tr>
           <tr>
             <th colspan="2">
-              <b>Total Fat</b>
-              14g
+              <b>Total Fat </b>
+              {props.food.fields.nf_total_fat}g
             </th>
             <td>
-              <b>22%</b>
+              <b> {Math.round((props.food.fields.nf_total_fat)/65*100)}0%</b>
             </td>
           </tr>
           <tr>
             <td class="blank-cell" />
-            <th>Saturated Fat 9g</th>
+            <th>Saturated Fat {props.food.fields.nf_saturated_fat}g</th>
             <td>
-              <b>22%</b>
+              <b>{Math.round((props.food.fields.nf_saturated_fat)/20*100)}%</b>
             </td>
           </tr>
           <tr>
             <td class="blank-cell" />
-            <th>Trans Fat 0g</th>
+            <th>Trans Fat {props.food.fields.nf_trans_fatty_acid}g</th>
             <td />
           </tr>
           <tr>
             <th colspan="2">
-              <b>Cholesterol</b>
-              55mg
+              <b>Cholesterol </b>
+              {props.food.fields.nf_cholesterol}mg
             </th>
             <td>
-              <b>18%</b>
+              <b>{Math.round((props.food.fields.nf_cholesterol)/300*100)}%</b>
             </td>
           </tr>
           <tr>
             <th colspan="2">
-              <b>Sodium</b>
-              40mg
+              <b>Sodium </b>
+              {props.food.fields.nf_sodium}mg
             </th>
             <td>
-              <b>2%</b>
+              <b>{Math.round((props.food.fields.nf_sodium)/2400*100)}%</b>
             </td>
           </tr>
           <tr>
             <th colspan="2">
-              <b>Total Carbohydrate</b>
-              17g
+              <b>Total Carbohydrate </b>
+              {props.food.fields.nf_total_carbohydrate}g
             </th>
             <td>
-              <b>6%</b>
+              <b>{Math.round((props.food.fields.nf_total_carbohydrate)/300*100)}%</b>
             </td>
           </tr>
           <tr>
             <td class="blank-cell" />
-            <th>Dietary Fiber 1g</th>
+            <th>Dietary Fiber {props.food.fields.nf_dietary_fiber}g</th>
             <td>
-              <b>4%</b>
+              <b>{Math.round((props.food.fields.nf_dietary_fiber)/25*100)}%</b>
             </td>
           </tr>
           <tr>
             <td class="blank-cell" />
-            <th>Sugars 14g</th>
+            <th>Sugars {props.food.fields.nf_sugars}g</th>
             <td />
           </tr>
           <tr class="thick-end">
             <th colspan="2">
-              <b>Protein</b>
-              3g
+              <b>Protein </b>
+              {props.food.fields.nf_protein}g
             </th>
             <td />
           </tr>
@@ -104,12 +106,12 @@ export default function NutFactor(props) {
       <table class="performance-facts__table--grid">
         <tbody>
           <tr>
-            <td colspan="2">Vitamin A 10%</td>
-            <td>Vitamin C 0%</td>
+            <td colspan="2">Vitamin A {Math.round((props.food.fields.nf_vitamin_a_dv)/1000*100)}%</td>
+            <td>Vitamin C {(props.food.fields.nf_vitamin_c_dv)/1000*100}%</td>
           </tr>
           <tr class="thin-end">
-            <td colspan="2">Calcium 10%</td>
-            <td>Iron 6%</td>
+            <td colspan="2">Calcium {Math.round((props.food.fields.nf_calcium_dv)/1000*100)}%</td>
+            <td>Iron {Math.round((props.food.fields.nf_iron_dv)/14*100)}%</td>
           </tr>
         </tbody>
       </table>
