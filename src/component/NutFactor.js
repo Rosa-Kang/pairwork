@@ -20,7 +20,7 @@ export default function NutFactor(props) {
           <tr>
             <th colspan="2">
               <b>Calories</b>
-              {props.food.fields.nf_calories}
+              {/* {props.food.fields.nf_calories} */}
             </th>
             <td>Calories from Fat 130</td>
           </tr>
